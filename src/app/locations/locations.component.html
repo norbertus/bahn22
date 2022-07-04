@@ -1,0 +1,8 @@
+<h2>Bahnhöfe in Deutschland</h2>
+<ul class="locations">
+	  <li *ngFor="let loc of locations">
+		<a routerLink="/timetable/{{loc.idLoc}}">
+		  <span class="badge">{{loc.idLoc}}</span> {{loc.name}}
+		</a>
+	  </li>
+</ul>

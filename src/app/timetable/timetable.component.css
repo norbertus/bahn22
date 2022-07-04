@@ -1,0 +1,15 @@
+.tddelayed {
+  color: #FF0000;
+}
+
+.tdnotdelayed
+{
+  /* gruen */
+  color: #00FF00;
+}
+
+.tdtofast
+{
+  /* gruen */
+  color: #0101DF;
+}

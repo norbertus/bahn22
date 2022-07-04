@@ -1,0 +1,9 @@
+# readmeNN
+ng serve -> Project läuft http://localhost:4200/
+ng build
+	dist folder entstanden
+	
+weiter entsprechend
+https://nicolgit.github.io/how-deploy-angular-app-to-azure-appservice-running-linux-from-github/
+
+	

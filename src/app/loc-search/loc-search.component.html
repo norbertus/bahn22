@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Bahnhofs Suche</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let loc of locations$ | async" >
+      <a routerLink="/timetable/{{loc.idLoc}}">
+        {{loc.name}}
+      </a>
+    </li>
+  </ul>
+</div>

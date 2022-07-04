@@ -1,0 +1,11 @@
+<h3>Top Bahnhöfe</h3>
+<div class="grid grid-pad">
+	  <a mat-button *ngFor="let loc of locations | slice:1:5" class="col-1-4"
+		  routerLink="/timetable/{{loc.idLoc}}">
+		<div class="module loc">
+		  <h4>{{loc.name}}</h4>
+		</div>
+	  </a>
+</div>
+
+<app-loc-search></app-loc-search>

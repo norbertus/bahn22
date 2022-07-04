@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <mat-toolbar color="primary">
+      <span>&nbsp;{{title}}</span>
+      <span class="spacer"></span>
+
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>arrow_back</mat-icon>
+          <span>Abfahrt</span>
+          <mat-icon>directions_railway</mat-icon>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>arrow_forward</mat-icon>
+          <span>Ankunft</span>
+          <mat-icon>directions_railway</mat-icon>
+        </button>
+        <mat-slide-toggle ngModel name="menuEnableDebug">Debug Ausgaben</mat-slide-toggle>
+        <button mat-menu-item>
+          <span>Software Version: 2022c</span>
+        </button>
+      </mat-menu>
+  </mat-toolbar>
+
+
+  <nav>
+    <a mat-button routerLink="/dashboard">Übersicht</a>
+    <a mat-button routerLink="/locations">Liste der Bahnhöfe</a>
+  </nav>
+  <router-outlet></router-outlet>
+  <app-messages></app-messages>
+
+  <div class="push"></div>
+
+ <!---   geht leider nicht 12/2017   --->
+ <!---
+  <div class="footer">
+        <span> Webtechnologie Beispiel </span>
+        <span class="spacer"></span>
+        <span> © 2018  Norbert Neumann </span>
+  </div>
+-->
+
+</div>

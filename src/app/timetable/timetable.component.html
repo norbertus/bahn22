@@ -1,0 +1,46 @@
+<div>
+  <h2>
+    <mat-icon>access_time</mat-icon>
+    {{actDisplayTime | date :  "HH:mm:ss" }}
+    &nbsp;
+    <mat-icon>directions_railway</mat-icon>
+    Abfahrten "{{stationname}}"
+  </h2>
+  Letzte Aktualisierung Fahrplan:{{lastFchgTime | date :  "HH:mm"}}
+</div>
+<table class="w3-table w3-striped w3-bordered w3-border">
+  <thead>
+  <tr class="w3-light-grey">
+    <th>Uhrzeit (Plan)</th>
+    <th>(Verspätung)</th>
+    <th>Richtung</th>
+    <th>Zug</th>
+    <th>Bahnsteig</th>
+    <th>Tag</th>
+  </tr>
+  </thead>
+      <tr *ngFor="let timetab of timetable">
+           <td>{{timetab.nnpday | date :  "HH:mm" }}</td>
+
+           <div *ngIf="timetab.nndelaymmAsInt == 0; else elseBlock">
+              <td class="tdnotdelayed">{{timetab.nndelaymm}}</td>
+           </div>
+           <ng-template #elseBlock>
+             <div *ngIf="timetab.nndelaymmAsInt > 0; else elseBlock2">
+                <td class="tddelayed">(+{{timetab.nndelaymm}})
+                  <mat-icon>assignment_late</mat-icon>
+                </td>
+             </div>
+           </ng-template>
+           <ng-template #elseBlock2>
+                <td class="tdtofast">(({{timetab.nndelaymm}}))</td>
+           </ng-template>
+
+           <td>{{timetab.nndir}}</td>
+           <td>{{timetab.nnc}}</td>
+           <td>{{timetab.nnpp}}</td>
+           <td>{{timetab.nnpday | date :  "dd.MM.y" }}</td>
+      </tr>
+</table>
+<button mat-button (click)="getTimetableFchg()">Verspätungen ermitteln (Fchg)</button>
+<button mat-button (click)="removeSomeTimeTableEntrys()">Tabelle kürzen</button>
