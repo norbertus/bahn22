@@ -23,8 +23,9 @@ jobs:
 
       - name: npm install, build, and test
         run: |
-          npm install
-          npm run build --if-present
+# nn 05.07.2022 2 next line commented        
+#          npm install
+#          npm run build --if-present
 # nn 04.07.2022 next line commented
 #         npm run test --if-present
 
